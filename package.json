@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "version": "1.0.2",
   "linter-package": true,
-  "description": "Find Ruby design issues using Roodi",
+  "description": "Find Ruby design issues using Roodi. Requires that you have the Roodi gem installed.",
   "repository": "https://github.com/roodi/linter-roodi",
   "license": "MIT",
   "engines": {
