@@ -22,11 +22,9 @@ class LinterRoodi extends Linter
   constructor: (editor)->
     super(editor)
 
-    if editor.getGrammar().scopeName == 'source.ruby.rails'
-      @cmd += " --rails"
-
-    config = findFile(@cwd, '.roodi.yml')
+    config = findFile(@cwd, 'roodi.yml')
     if config
-      @cmd += " --config #{config}"
+      @cmd += " -config=#{config}"
+      console.log("cmd: " + @cmd)
 
 module.exports = LinterRoodi

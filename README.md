@@ -10,26 +10,21 @@ As you save a file, Roodi will run checks just like any other Linter plugin. If 
 
 1. Linter must be installed in order to use this plugin. If Linter is not installed, please see [the instructions](https://github.com/AtomLinter/Linter).
 1. Install [roodi](https://github.com/roodi/roodi):
+
    ```
    gem install roodi
    ```
+1. Install the linter-roodi package from the settings in Atom.
 
-Now you can proceed to install the linter-roodi plugin.
-
-### Plugin installation
-```
-$ apm install linter-roodi
-```
+### Configuration
+The plugin finds the nearest roodi.yml file and uses that.
 
 #### executablePath
 ```
 'linter-roodi':
   'executablePath': null # roodi path.
 ```
-Run `which roodi` to find the path,
-if you using rbenv run `rbenv which roodi`
-
-**Note**: This plugin finds the nearest .roodi.yml file and uses the --config command line argument to use that file, so you may not use the --config argument in the linter settings.
+Run `which roodi` to find the path, if you're using rbenv run `rbenv which roodi`
 
 ## Contributing
 
