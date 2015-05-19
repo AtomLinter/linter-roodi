@@ -1,0 +1,14 @@
+{
+  "name": "linter-roodi",
+  "main": "./lib/init",
+  "version": "0.0.1",
+  "linter-package": true,
+  "description": "Lint Ruby using Roodi",
+  "repository": "https://github.com/roodi/linter-roodi",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
