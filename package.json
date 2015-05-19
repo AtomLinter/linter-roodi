@@ -1,7 +1,7 @@
 {
   "name": "linter-roodi",
   "main": "./lib/init",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "linter-package": true,
   "description": "Find Ruby design issues using Roodi",
   "repository": "https://github.com/roodi/linter-roodi",
