@@ -1,7 +1,7 @@
 linter-roodi
 =========================
 
-This is a [Linter](https://github.com/AtomLinter/Linter) plugin that inspects your Ruby code using [roodi](https://github.com/roodi/roodi).
+This is a [Linter](https://github.com/AtomLinter/Linter) plugin for the [Atom editor](https://atom.io) that inspects your Ruby code using [roodi](https://github.com/roodi/roodi).
 
 ## Usage
 As you save a file, Roodi will run checks just like any other Linter plugin. If there are any issues in your file, a message will pop up.
