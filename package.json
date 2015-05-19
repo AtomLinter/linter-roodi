@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "version": "1.0.0",
   "linter-package": true,
-  "description": "Lint Ruby using Roodi",
+  "description": "Find Ruby design issues using Roodi",
   "repository": "https://github.com/roodi/linter-roodi",
   "license": "MIT",
   "engines": {

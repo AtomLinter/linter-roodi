@@ -3,6 +3,8 @@ linter-roodi
 
 This is a [Linter](https://github.com/AtomLinter/Linter) plugin for the [Atom editor](https://atom.io) that inspects your Ruby code using [roodi](https://github.com/roodi/roodi).
 
+Roodi stands for Ruby Object Oriented Design Inferometer. It parses your Ruby code and warns you about design issues you have based on the checks that it has configured.
+
 ## Usage
 As you save a file, Roodi will run checks just like any other Linter plugin. If there are any issues in your file, a message will pop up.
 
