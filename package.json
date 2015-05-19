@@ -1,7 +1,7 @@
 {
   "name": "linter-roodi",
   "main": "./lib/init",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "linter-package": true,
   "description": "Lint Ruby using Roodi",
   "repository": "https://github.com/roodi/linter-roodi",
