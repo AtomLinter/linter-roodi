@@ -4,7 +4,7 @@
   "version": "1.0.3",
   "linter-package": true,
   "description": "Find Ruby design issues using Roodi. Requires that you have the Roodi gem installed.",
-  "repository": "https://github.com/roodi/linter-roodi",
+  "repository": "https://github.com/AtomLinter/linter-roodi",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
