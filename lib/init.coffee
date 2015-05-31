@@ -8,9 +8,3 @@ module.exports =
 
   activate: (state) ->
     console.log 'activate linter-roodi'
-
-  deactivate: ->
-    console.log 'deactivate linter-roodi'
-
-  toggle: ->
-    console.log 'linter-roodi was toggled!'
