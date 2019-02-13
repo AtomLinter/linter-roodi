@@ -28,8 +28,6 @@ module.exports =
             exit: (code) ->
               return resolve [] if code is 0
 
-              console.log(output)
-
               lines = output.split("\n")
               errorPattern = /.+?:(\d+) - (.*)\x1B\[[0-?]/
 
