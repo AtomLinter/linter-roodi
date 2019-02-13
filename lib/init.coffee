@@ -1,13 +1,9 @@
-{BufferedProcess, CompositeDisposable} = require 'atom'
+{ BufferedProcess, CompositeDisposable } = require 'atom'
+helpers = require 'atom-linter'
 
 module.exports =
-  config:
-    executablePath:
-      type: 'string'
-      title: 'The path where Roodi is located'
-      default: 'roodi'
   activate: ->
-    console.log 'activate linter-roodi'
+    console.log 'activate linter-roodi' if atom.inDevMode()
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-roodi.executablePath',
       (executablePath) =>
@@ -16,46 +12,47 @@ module.exports =
     @subscriptions.dispose()
   provideLinter: ->
     provider =
+      name: 'roodi'
       grammarScopes: ['source.ruby', 'source.ruby.rails', 'source.ruby.rspec']
       scope: 'file' # or 'project'
-      lintOnFly: true # must be false for scope: 'project'
+      lintsOnChange: true # must be false for scope: 'project'
       lint: (textEditor) =>
-        return new Promise (resolve, reject) =>
+        return new Promise (resolve, reject) ->
           filePath = textEditor.getPath()
-          output = ""
+          output = ''
           process = new BufferedProcess
             command: @executablePath
-            args: [filePath, '--json']
+            args: [filePath]
             stdout: (data) ->
               output = data
             exit: (code) ->
               return resolve [] if code is 0
 
               lines = output.split("\n")
-              errorPattern = /.+?:(\d+) - (.+)\[/
+
+              errorPattern = /.+?:(\d+) - (.*).\[[0-?]/
 
               errors = []
 
               for line in lines
                 result = line.match errorPattern
+
                 if result
                   errors.push {
-                    text: result[2]
+                    message: result[2]
                     line: result[1]
                   }
 
               return resolve [] unless errors?
-              resolve errors.map (error) ->
-                type: "Error",
-                text: error.text,
-                filePath: filePath,
-                range: [
-                  # Atom expects ranges to be 0-based
-                  [error.line - 1, 0],
-                  [error.line - 1, 10000]
-                ]
 
-          process.onWillThrowError ({error,handle}) ->
+              resolve errors.map (error) ->
+                severity: 'error'
+                excerpt: error.message
+                location:
+                  file: filePath
+                  position: helpers.generateRange(textEditor, Number.parseInt(error.line, 10) - 1)
+
+          process.onWillThrowError ({ error, handle }) ->
             atom.notifications.addError "Failed to run #{@executablePath}",
               detail: "#{error.message}"
               dismissable: true
