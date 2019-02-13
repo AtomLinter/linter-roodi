@@ -6,7 +6,7 @@ module.exports =
     console.log 'activate linter-roodi' if atom.inDevMode()
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-roodi.executablePath',
-      (executablePath) ->
+      (executablePath) =>
         @executablePath = executablePath
   deactivate: ->
     @subscriptions.dispose()
@@ -16,7 +16,7 @@ module.exports =
       grammarScopes: ['source.ruby', 'source.ruby.rails', 'source.ruby.rspec']
       scope: 'file' # or 'project'
       lintsOnChange: true # must be false for scope: 'project'
-      lint: (textEditor) ->
+      lint: (textEditor) =>
         return new Promise (resolve, reject) ->
           filePath = textEditor.getPath()
           output = ''
