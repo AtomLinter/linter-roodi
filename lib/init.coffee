@@ -29,7 +29,8 @@ module.exports =
               return resolve [] if code is 0
 
               lines = output.split("\n")
-              errorPattern = /.+?:(\d+) - (.*)\x1B\[[0-?]/
+
+              errorPattern = /.+?:(\d+) - (.*).\[[0-?]/
 
               errors = []
 
