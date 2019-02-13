@@ -8,11 +8,20 @@
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
-  "dependencies": {},
+  "configSchema": {
+    "executablePath": {
+      "default": "roodi",
+      "description": "The path where Roodi is located.",
+      "type": "string"
+    }
+  },
+  "dependencies": {
+    "atom-linter": "10.0.0"
+  },
   "providedServices": {
     "linter": {
       "versions": {
-        "1.0.0": "provideLinter"
+        "2.0.0": "provideLinter"
       }
     }
   }
