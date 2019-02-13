@@ -6,7 +6,7 @@
   "repository": "https://github.com/AtomLinter/linter-roodi",
   "license": "MIT",
   "engines": {
-    "atom": ">=v1.9.0 <2.0.0"
+    "atom": ">=1.9.0 <2.0.0"
   },
   "configSchema": {
     "executablePath": {
